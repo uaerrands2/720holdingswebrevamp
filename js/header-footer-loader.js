@@ -194,6 +194,44 @@ function setActiveNavItem() {
             }
         });
     }
+
+    // Ensure mobile hamburger shows active state on home (index) for clarity on small screens
+    try {
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('main-nav');
+        if (mobileBtn) {
+            if (currentPage === 'home') {
+                // Only mark visually active (do not auto-open menu) unless viewport is narrow
+                if (window.innerWidth < 992) {
+                    mobileBtn.classList.add('active');
+                    mobileBtn.setAttribute('aria-expanded', 'true');
+                    if (nav) {
+                        nav.classList.add('active');
+                        nav.setAttribute('aria-hidden', 'false');
+                        document.body.style.overflow = 'hidden';
+                    }
+                } else {
+                    mobileBtn.classList.remove('active');
+                    mobileBtn.setAttribute('aria-expanded', 'false');
+                    if (nav) {
+                        nav.classList.remove('active');
+                        nav.setAttribute('aria-hidden', 'true');
+                        document.body.style.overflow = '';
+                    }
+                }
+            } else {
+                mobileBtn.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+                if (nav) {
+                    nav.classList.remove('active');
+                    nav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+            }
+        }
+    } catch (e) {
+        // ignore if header not present yet
+    }
 }
 
 function initializeHeaderScripts() {
