@@ -1,5 +1,5 @@
 <header class="main-header">
-        <div class="container">
+    <div class="container">
             <div class="header-top">
                 <div class="header-contact">
                     <span><i class="fas fa-phone"></i> 0723 518 210</span>
@@ -36,14 +36,11 @@
                             <span class="cart-count">0</span>
                         </a>
                     </div>
-                    
-                    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars" aria-hidden="true"></i>
-                    </button>
                 </div>
             </div>
             
-            <nav class="main-nav" id="main-nav" aria-hidden="true">
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" id="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
                     <li><a href="index.html" data-page="home">Home</a></li>
                     <li class="dropdown">
@@ -78,13 +75,37 @@
                         </div>
                     </li>
                     <li><a href="pages/about.html" data-page="about">About Us</a></li>
-                    <li><a href="pages/how-to-order.html" data-page="how-to-order">How to Order</a></li>
                     <li><a href="pages/contact.html" data-page="contact">Contact Us</a></li>
                     <li><a href="pages/get-quote.html" data-page="get-quote" class="btn btn-gold">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Bottom Navigation -->
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="bottom-nav-item" data-page="home" aria-label="Home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="shop.html" class="bottom-nav-item" data-page="shop" aria-label="Shop">
+            <i class="fas fa-store"></i>
+            <span>Shop</span>
+        </a>
+        <a href="pages/about.html" class="bottom-nav-item" data-page="about" aria-label="About Us">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="pages/contact.html" class="bottom-nav-item" data-page="contact" aria-label="Contact Us">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <a href="cart.html" class="bottom-nav-item" data-page="cart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Cart</span>
+            <span class="nav-cart-badge" style="display: none;">0</span>
+        </a>
+    </nav>
     
     <style>
         /* Header-specific styles */
@@ -93,11 +114,11 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 800;
         }
         
         .header-top {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-dark-green);
             color: var(--white);
             padding: 8px 0;
             display: none;
@@ -143,7 +164,7 @@
         
         .logo h1 {
             font-size: 1.8rem;
-            color: var(--primary-blue);
+            color: var(--primary-dark-green);
             margin-bottom: 0;
         }
         
@@ -160,7 +181,7 @@
         .header-search-cart {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
         
         .search-form {
@@ -171,7 +192,6 @@
         @media (max-width: 768px) {
             .header-search-cart {
                 gap: 8px;
-                order: 2;
             }
             
             .search-form {
@@ -189,18 +209,29 @@
         }
         
         .search-btn {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-dark-green);
             color: var(--white);
             border: none;
             padding: 0 15px;
             border-radius: 0 var(--radius) var(--radius) 0;
             cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-btn:hover {
+            background-color: var(--primary-green);
         }
         
         .cart-icon {
             position: relative;
-            color: var(--primary-blue);
+            color: var(--primary-dark-green);
             font-size: 1.3rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .cart-icon:hover {
+            color: var(--accent-gold);
         }
         
         .cart-count {
@@ -219,49 +250,12 @@
             justify-content: center;
         }
         
-        .mobile-menu-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            cursor: pointer;
-            padding: 8px 12px;
-            transition: var(--transition);
-            min-width: 44px;
-            min-height: 44px;
-        }
-        
-        .mobile-menu-btn:hover {
-            color: var(--accent-gold);
-            transform: scale(1.05);
-        }
-        
-        .mobile-menu-btn i {
-            display: block;
-            line-height: 1;
-        }
-        .mobile-menu-btn.active {
-            color: var(--accent-gold);
-            background: rgba(197,183,42,0.06);
-            border-radius: 8px;
-        }
-        
+        /* Desktop Navigation */
         .main-nav {
-            background-color: var(--white);
-            border-top: 1px solid #eee;
-            padding: 0;
-            display: none;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .main-nav.active {
-            display: block;
-            max-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%;
         }
         
         .nav-list {
@@ -269,8 +263,9 @@
             flex-direction: column;
             list-style: none;
             gap: 0;
-            padding: 10px 0;
+            padding: 0;
             width: 100%;
+            margin: 0;
         }
         
         .nav-list li {
@@ -285,21 +280,17 @@
             font-weight: 500;
             transition: var(--transition);
             border-bottom: 1px solid #f0f0f0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            /* Enforce horizontal text rendering to avoid vertical stacking */
-            writing-mode: horizontal-tb !important;
-            text-orientation: mixed !important;
-            transform: none !important;
-            letter-spacing: normal !important;
-            display: inline-flex;
-            align-items: center;
         }
         
         .nav-list li a:hover {
             background-color: #f9fafb;
-            color: var(--primary-blue);
+            color: var(--primary-dark-green);
+        }
+        
+        .nav-list li a.active {
+            color: var(--accent-gold);
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 16px;
         }
         
         .dropdown-menu {
@@ -313,7 +304,7 @@
         .dropdown-column h3 {
             font-size: 1rem;
             margin: 15px 0 10px 0;
-            color: var(--primary-blue);
+            color: var(--primary-dark-green);
         }
         
         .dropdown-column a {
@@ -325,14 +316,88 @@
         }
         
         .dropdown-column a:hover {
-            color: var(--primary-blue);
+            color: var(--primary-dark-green);
         }
         
         .dropdown:hover .dropdown-menu {
             display: block;
         }
         
-        /* Desktop styles */
+        /* Mobile Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 900;
+            height: 70px;
+            padding: 0;
+            justify-content: space-around;
+            align-items: stretch;
+        }
+        
+        .bottom-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            text-decoration: none;
+            color: var(--light-text);
+            font-size: 0.75rem;
+            gap: 4px;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .bottom-nav-item i {
+            font-size: 1.5rem;
+        }
+        
+        .bottom-nav-item:hover {
+            color: var(--primary-dark-green);
+        }
+        
+        .bottom-nav-item.active {
+            color: var(--accent-gold);
+        }
+        
+        .bottom-nav-item.active i {
+            animation: bounce 0.3s ease;
+        }
+        
+        .nav-cart-badge {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            background-color: var(--accent-gold);
+            color: var(--dark-text);
+            font-size: 0.6rem;
+            font-weight: bold;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Content padding to account for fixed bottom nav */
+        body {
+            padding-bottom: 70px;
+        }
+        
+        /* Desktop Navigation Styles */
         @media (min-width: 992px) {
             .header-top {
                 display: flex;
@@ -341,35 +406,48 @@
             
             .header-main {
                 padding: 20px 0;
+                padding-bottom: 15px;
             }
             
             .logo h1 {
                 font-size: 2.2rem;
             }
             
-            .mobile-menu-btn {
-                display: none;
-            }
-            
             .main-nav {
-                display: block !important;
-                border-top: none;
-                padding: 10px 0;
-            }
-            
-            .main-nav.active {
-                display: block;
+                border-top: 1px solid #eee;
+                padding-top: 15px;
+                flex-direction: row;
+                align-items: center;
             }
             
             .nav-list {
                 flex-direction: row;
                 align-items: center;
-                gap: 25px;
+                gap: 30px;
+            }
+            
+            .nav-list li {
+                position: relative;
             }
             
             .nav-list li a {
                 padding: 5px 0;
                 border-bottom: none;
+                border-left: none;
+                padding-left: 0;
+            }
+            
+            .nav-list li a:hover {
+                background-color: transparent;
+                border-bottom: 3px solid var(--accent-gold);
+                padding-bottom: 2px;
+            }
+            
+            .nav-list li a.active {
+                border-bottom: 3px solid var(--accent-gold);
+                border-left: none;
+                padding-bottom: 2px;
+                padding-left: 0;
             }
             
             .dropdown-menu {
@@ -383,6 +461,7 @@
                 display: none;
                 z-index: 1000;
                 border-top: 3px solid var(--accent-gold);
+                margin-top: 10px;
             }
             
             .dropdown-grid {
@@ -397,7 +476,28 @@
             
             .nav-list li:last-child a {
                 padding: 10px 20px;
-                margin-left: 10px;
+                margin-left: 15px;
+            }
+            
+            /* Hide bottom navigation on desktop */
+            .bottom-nav {
+                display: none !important;
+            }
+            
+            /* Remove bottom padding on desktop */
+            body {
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Tablet and small adjustments */
+        @media (max-width: 991px) and (min-width: 769px) {
+            body {
+                padding-bottom: 70px;
+            }
+            
+            .main-nav {
+                display: none;
             }
         }
     </style>
@@ -405,65 +505,156 @@
     <script>
         // Header-specific scripts
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mainNav = document.getElementById('main-nav');
+            const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+            const navItems = document.querySelectorAll('[data-page]');
             
-            if (mobileMenuBtn && mainNav) {
-                // Toggle menu and ARIA attributes
-                mobileMenuBtn.addEventListener('click', function() {
-                    const isOpen = mainNav.classList.toggle('active');
-                    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    mainNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-                    // prevent body scroll when open
-                    if (isOpen) document.body.style.overflow = 'hidden'; else document.body.style.overflow = '';
+            // Helper function to determine if current location is in /pages/ subdirectory
+            function isInPagesDirectory() {
+                return window.location.pathname.includes('/pages/');
+            }
+            
+            // Helper function to fix navigation paths based on current location
+            function fixNavigationPaths() {
+                const inPages = isInPagesDirectory();
+                
+                // Pages directory file names
+                const pagesFiles = ['about.html', 'contact.html', 'get-quote.html', 'how-to-order.html'];
+                
+                // Fix bottom nav items
+                bottomNavItems.forEach(item => {
+                    let href = item.getAttribute('href');
+                    
+                    // If we're in /pages/ directory
+                    if (inPages) {
+                        // Root-level pages: index.html, shop.html, cart.html, product.html
+                        if (href === 'index.html' || href === 'shop.html' || href === 'cart.html' || href === 'product.html') {
+                            item.setAttribute('href', '../' + href);
+                        }
+                        // Pages in /pages/ directory: leave pages/about.html as-is (will navigate correctly within /pages/)
+                        // Do NOT modify pages/* links when in /pages/ directory
+                    }
                 });
-
-                // Close mobile menu when a link is clicked
-                const navLinks = mainNav.querySelectorAll('a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mainNav.classList.remove('active');
-                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                        mainNav.setAttribute('aria-hidden', 'true');
-                        document.body.style.overflow = '';
-                    });
+                
+                // Also fix desktop navigation links
+                const allNavLinks = document.querySelectorAll('.nav-list a, .dropdown-menu a');
+                allNavLinks.forEach(link => {
+                    let href = link.getAttribute('href');
+                    
+                    // Skip external links and hash links
+                    if (!href || href.startsWith('#') || href.startsWith('/') || href.startsWith('http')) {
+                        return;
+                    }
+                    
+                    // If we're in /pages/ directory
+                    if (inPages) {
+                        // Check if this is a pages directory file
+                        const isPagesDirFile = pagesFiles.some(f => href === 'pages/' + f);
+                        
+                        // If it's a pages directory file, leave it as-is
+                        if (isPagesDirFile) {
+                            return;
+                        }
+                        
+                        // Root-level pages: index.html, shop.html, cart.html, product.html
+                        if (href === 'index.html' || href === 'shop.html' || href === 'cart.html' || href === 'product.html' || 
+                            href.startsWith('shop.html?') || href.startsWith('product.html?')) {
+                            if (!href.startsWith('../')) {
+                                link.setAttribute('href', '../' + href);
+                            }
+                        }
+                    }
+                    // If we're in root directory, ensure pages/* links have the pages/ prefix
+                    else {
+                        const isPagesDirFile = pagesFiles.some(f => href === f);
+                        if (isPagesDirFile && !href.startsWith('pages/')) {
+                            link.setAttribute('href', 'pages/' + href);
+                        }
+                    }
                 });
             }
             
-            // Close mobile menu when window is resized to desktop
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 992) {
-                    mainNav.classList.remove('active');
-                }
-            });
+            // Helper function to get current page
+            function getCurrentPage() {
+                const pathname = window.location.pathname;
+                
+                // Extract filename without extension
+                let currentPage = pathname.split('/').pop().split('.')[0] || 'home';
+                
+                // Map filenames to data-page values
+                if (currentPage === '' || currentPage === 'index') currentPage = 'home';
+                if (currentPage === 'cart') currentPage = 'cart';
+                if (currentPage === 'product') currentPage = 'product';
+                if (currentPage === 'shop') currentPage = 'shop';
+                if (currentPage === 'about') currentPage = 'about';
+                if (currentPage === 'how-to-order') currentPage = 'how-to-order';
+                if (currentPage === 'contact') currentPage = 'contact';
+                if (currentPage === 'get-quote') currentPage = 'get-quote';
+                
+                return currentPage;
+            }
             
-            // Update cart count (prefer global updater if available)
-            function refreshHeaderCartCount() {
-                const cartCounts = document.querySelectorAll('.cart-count');
-                if (typeof window.updateCartCount === 'function') {
-                    window.updateCartCount();
-                } else {
+            // Fix navigation paths on page load
+            fixNavigationPaths();
+            
+            // Set active state on load
+            function setActiveNavItem() {
+                const currentPage = getCurrentPage();
+                
+                // Remove active from all items
+                bottomNavItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Add active to matching items
+                bottomNavItems.forEach(item => {
+                    if (item.getAttribute('data-page') === currentPage) {
+                        item.classList.add('active');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    if (item.getAttribute('data-page') === currentPage) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+            
+            setActiveNavItem();
+            
+            // Update cart count in bottom nav
+            function updateCartCount() {
+                const cartBadge = document.querySelector('.nav-cart-badge');
+                if (cartBadge) {
                     const cart = JSON.parse(localStorage.getItem('sevenTwentyCart')) || [];
                     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                    cartCounts.forEach(el => {
-                        el.textContent = totalItems;
-                        el.style.display = totalItems > 0 ? 'flex' : 'none';
-                    });
+                    cartBadge.textContent = totalItems;
+                    cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
                 }
             }
-
-            refreshHeaderCartCount();
             
-            // Cart icon click handler
-            const cartIcon = document.getElementById('cart-icon');
-            if (cartIcon) {
-                cartIcon.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('Shopping cart functionality will be implemented with WooCommerce integration.');
-                    // In a full implementation, this would open a cart modal or navigate to cart page
+            // Also update header cart count
+            function updateHeaderCartCount() {
+                const cartCounts = document.querySelectorAll('.cart-count');
+                const cart = JSON.parse(localStorage.getItem('sevenTwentyCart')) || [];
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCounts.forEach(el => {
+                    el.textContent = totalItems;
+                    el.style.display = totalItems > 0 ? 'flex' : 'none';
                 });
             }
+            
+            updateCartCount();
+            updateHeaderCartCount();
+            
+            // Make cart update function globally accessible
+            window.updateCartCount = function() {
+                updateCartCount();
+                updateHeaderCartCount();
+            };
             
             // Search form submission
             const searchForm = document.querySelector('.search-form');
@@ -478,4 +669,5 @@
             }
         });
     </script>
+
 </header>

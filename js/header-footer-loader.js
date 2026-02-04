@@ -195,43 +195,7 @@ function setActiveNavItem() {
         });
     }
 
-    // Ensure mobile hamburger shows active state on home (index) for clarity on small screens
-    try {
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const nav = document.getElementById('main-nav');
-        if (mobileBtn) {
-            if (currentPage === 'home') {
-                // Only mark visually active (do not auto-open menu) unless viewport is narrow
-                if (window.innerWidth < 992) {
-                    mobileBtn.classList.add('active');
-                    mobileBtn.setAttribute('aria-expanded', 'true');
-                    if (nav) {
-                        nav.classList.add('active');
-                        nav.setAttribute('aria-hidden', 'false');
-                        document.body.style.overflow = 'hidden';
-                    }
-                } else {
-                    mobileBtn.classList.remove('active');
-                    mobileBtn.setAttribute('aria-expanded', 'false');
-                    if (nav) {
-                        nav.classList.remove('active');
-                        nav.setAttribute('aria-hidden', 'true');
-                        document.body.style.overflow = '';
-                    }
-                }
-            } else {
-                mobileBtn.classList.remove('active');
-                mobileBtn.setAttribute('aria-expanded', 'false');
-                if (nav) {
-                    nav.classList.remove('active');
-                    nav.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = '';
-                }
-            }
-        }
-    } catch (e) {
-        // ignore if header not present yet
-    }
+    // Mobile hamburger active state is handled in initializeHeaderScripts()
 }
 
 function initializeHeaderScripts() {
@@ -240,16 +204,27 @@ function initializeHeaderScripts() {
     const mainNav = document.getElementById('main-nav');
     
     if (mobileMenuBtn && mainNav) {
+        // Initialize ARIA state
+        mobileMenuBtn.setAttribute('aria-expanded', mobileMenuBtn.classList.contains('active') ? 'true' : 'false');
+        mainNav.setAttribute('aria-hidden', mainNav.classList.contains('active') ? 'false' : 'true');
+
         mobileMenuBtn.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
+            const isOpen = mainNav.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            mainNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            // prevent background scroll when open
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
-        
-        // Close menu when a link is clicked
+
+        // Close menu when a link is clicked and update ARIA
         mainNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 mainNav.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mainNav.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
             });
         });
     }
