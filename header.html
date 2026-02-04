@@ -37,13 +37,13 @@
                         </a>
                     </div>
                     
-                    <button class="mobile-menu-btn" id="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
             
-            <nav class="main-nav" id="main-nav">
+            <nav class="main-nav" id="main-nav" aria-hidden="true">
                 <ul class="nav-list">
                     <li><a href="index.html" data-page="home">Home</a></li>
                     <li class="dropdown">
@@ -131,7 +131,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 12px 0;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .header-main {
+                padding: 10px 0;
+            }
         }
         
         .logo h1 {
@@ -153,12 +160,23 @@
         .header-search-cart {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
         
         .search-form {
             display: flex;
             width: 250px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-search-cart {
+                gap: 8px;
+                order: 2;
+            }
+            
+            .search-form {
+                display: none;
+            }
         }
         
         .search-input {
@@ -202,18 +220,28 @@
         }
         
         .mobile-menu-btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: none;
             border: none;
             font-size: 1.5rem;
             color: var(--primary-blue);
             cursor: pointer;
-            padding: 5px;
+            padding: 8px 12px;
             transition: var(--transition);
+            min-width: 44px;
+            min-height: 44px;
         }
         
         .mobile-menu-btn:hover {
-            transform: scale(1.1);
+            color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+        
+        .mobile-menu-btn i {
+            display: block;
+            line-height: 1;
         }
         
         .main-nav {
@@ -221,10 +249,14 @@
             border-top: 1px solid #eee;
             padding: 0;
             display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
         
         .main-nav.active {
             display: block;
+            max-height: 500px;
         }
         
         .nav-list {
@@ -233,6 +265,7 @@
             list-style: none;
             gap: 0;
             padding: 10px 0;
+            width: 100%;
         }
         
         .nav-list li {
@@ -247,6 +280,16 @@
             font-weight: 500;
             transition: var(--transition);
             border-bottom: 1px solid #f0f0f0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Enforce horizontal text rendering to avoid vertical stacking */
+            writing-mode: horizontal-tb !important;
+            text-orientation: mixed !important;
+            transform: none !important;
+            letter-spacing: normal !important;
+            display: inline-flex;
+            align-items: center;
         }
         
         .nav-list li a:hover {
@@ -361,19 +404,27 @@
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mainNav = document.getElementById('main-nav');
             
-            if (mobileMenuBtn) {
+            if (mobileMenuBtn && mainNav) {
+                // Toggle menu and ARIA attributes
                 mobileMenuBtn.addEventListener('click', function() {
-                    mainNav.classList.toggle('active');
+                    const isOpen = mainNav.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    mainNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+                    // prevent body scroll when open
+                    if (isOpen) document.body.style.overflow = 'hidden'; else document.body.style.overflow = '';
+                });
+
+                // Close mobile menu when a link is clicked
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        mainNav.setAttribute('aria-hidden', 'true');
+                        document.body.style.overflow = '';
+                    });
                 });
             }
-            
-            // Close mobile menu when a link is clicked
-            const navLinks = mainNav.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mainNav.classList.remove('active');
-                });
-            });
             
             // Close mobile menu when window is resized to desktop
             window.addEventListener('resize', function() {
