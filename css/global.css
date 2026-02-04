@@ -494,3 +494,100 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent-gold) !important;
     font-weight: 700;
 }
+/* Responsive overflow and performance helpers */
+/* Prevent horizontal scroll on small devices and make media fluid */
+html, body {
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x: hidden;
+}
+
+/* Ensure all elements use border-box sizing (already set) and media scale */
+img, picture, video, iframe, .image-placeholder {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Break long words/URLs to avoid overflow */
+* { word-break: break-word; }
+
+/* Mobile-first overrides to neutralize fixed pixel widths that cause spilling */
+@media (max-width: 768px) {
+    /* Force common grid/column components to stack */
+    .methods-grid, .delivery-grid, .installation-grid, .installation-grid .installation-card,
+    .methods-grid .method-card, .delivery-grid .delivery-card, .installation-card,
+    .steps-timeline, .steps-timeline .step, .bulk-content, .bulk-image, .bulk-image .image-placeholder,
+    .support-contacts, .support-contacts a {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+    }
+
+    /* Make buttons full-width on narrow screens where they're stacked */
+    .support-contacts .btn, .step-actions .btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    /* Ensure timeline steps stack vertically */
+    .steps-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    /* Avoid fixed-width chat/widget spilling */
+    .chatbot-widget { width: 90vw !important; max-width: 380px !important; }
+
+    /* Reduce large decorative pseudo-element sizes that cause overflow */
+    .hero-section::before, .shop-hero::before, .installation-services::before,
+    .bulk-orders::before, .order-support::before, .bulk-orders::after,
+    .installation-services::after, .order-support::after {
+        width: 280px !important;
+        height: 280px !important;
+        top: -40% !important;
+        right: -10% !important;
+        left: auto !important;
+        bottom: auto !important;
+    }
+
+    /* Additional large decorative elements to shrink on mobile */
+    .page-header::before, .cart-hero::before, .installation-cta::before,
+    .hero-section::after, .shop-hero::after, .cart-hero::after {
+        width: 260px !important;
+        height: 260px !important;
+        top: -35% !important;
+        right: -8% !important;
+        left: auto !important;
+        bottom: auto !important;
+    }
+
+    /* Reduce heavy paddings that can cause overflow on narrow screens */
+    .installation-cta, .installation-services, .bulk-orders, .order-support {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
+    }
+
+    /* Force textual containers and section paragraphs to be fluid */
+    .section-title p, .support-content, .page-header-content p, .bulk-text p,
+    .section-title, .support-text, .product-description, .image-placeholder p,
+    .container .section-title p, .support-contacts, .bulk-text ul {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Reset any large min-widths that could cause spill */
+    [class*="min-width-"], .min-width-fix, [style*="min-width"] {
+        min-width: 0 !important;
+    }
+}
+
+/* Helpful performance-related defaults */
+/* Encourage images to lazy-load by default (add `loading="lazy"` in markup where practical) */
+img[loading] { will-change: transform; }

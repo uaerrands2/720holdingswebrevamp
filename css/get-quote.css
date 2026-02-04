@@ -38,7 +38,8 @@
 
 .page-header-content p {
     font-size: 1.25rem;
-    max-width: 700px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.95);
     animation: slideUp 0.6s ease-out 0.2s both;
@@ -549,4 +550,16 @@
         display: grid;
         grid-template-columns: 1fr 350px;
     }
+}
+
+/* Mobile safety overrides to prevent horizontal spilling */
+@media (max-width: 768px) {
+    .quote-grid, .quote-form, .form-row, .image-placeholder, .quote-summary {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        box-sizing: border-box;
+    }
+
+    .btn { width: 100%; }
 }

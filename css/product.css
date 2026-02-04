@@ -866,3 +866,16 @@
         justify-content: center;
     }
 }
+
+/* Mobile safety overrides to prevent horizontal spilling */
+@media (max-width: 768px) {
+    .product-gallery, .product-info, .product-meta, .product-thumbs, .related-products,
+    .image-placeholder, .product-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        box-sizing: border-box;
+    }
+
+    .btn { width: 100%; }
+}

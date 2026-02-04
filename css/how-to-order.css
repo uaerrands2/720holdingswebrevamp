@@ -17,6 +17,21 @@
     --transition: all 0.3s ease;
 }
 
+/* Mobile safety overrides to prevent horizontal spilling */
+@media (max-width: 768px) {
+    .methods-grid, .delivery-grid, .installation-grid, .installation-card,
+    .method-card, .delivery-card, .installation-card, .bulk-content, .bulk-image,
+    .image-placeholder, .steps-timeline, .steps-timeline .step, .support-contacts,
+    .support-contacts a, .product-card, .product-gallery, .product-info, .page-header-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        box-sizing: border-box;
+    }
+
+    .btn { width: 100%; }
+}
+
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, #112919 0%, #52992f 50%, #c5b72a 100%);
@@ -127,7 +142,8 @@
     position: absolute;
     top: -50%;
     right: -10%;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 600px;
     background: radial-gradient(circle, rgba(255, 215, 0, 0.08), transparent);
     border-radius: 50%;
@@ -165,6 +181,7 @@
     font-size: 1.1rem;
     color: var(--light-text);
     font-weight: 400;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.7;
@@ -351,6 +368,7 @@
     opacity: 0.95;
     margin-bottom: 30px;
     line-height: 1.8;
+    width: 100%;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -828,7 +846,8 @@
     position: absolute;
     top: -30%;
     left: -10%;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 600px;
     background: radial-gradient(circle, rgba(10, 36, 99, 0.08), transparent);
     border-radius: 50%;
