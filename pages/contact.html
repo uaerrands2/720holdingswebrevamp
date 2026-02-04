@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SevenTwenty Holdings | Kenyan Manufacturer</title>
+    <meta name="description" content="Contact SevenTwenty Holdings for curtain rods, paints, hardware, and solar solutions. Phone, email, and locations in Kiambu, Gikomba, and Kahawa.">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+    
+    <main>
+        <!-- Page Header -->
+        <section class="page-header kenyan-pattern">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1>Contact SevenTwenty Holdings</h1>
+                    <p>Get in touch with Kenya's leading manufacturer of curtain rods, paints, hardware, and solar solutions</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Info -->
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone Numbers</h3>
+                        <div class="contact-details">
+                            <p><strong>Main Line:</strong> 0723 518 210</p>
+                            <p><strong>Sales:</strong> 0727 111 199</p>
+                            <p><strong>Support:</strong> 0727 111 119</p>
+                        </div>
+                        <p class="contact-hours">Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Addresses</h3>
+                        <div class="contact-details">
+                            <p><strong>General Inquiries:</strong><br>info@seventwentyholdings.co.ke</p>
+                            <p><strong>Sales:</strong><br>sales@seventwentyholdings.co.ke</p>
+                            <p><strong>Support:</strong><br>support@seventwentyholdings.co.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Our Locations</h3>
+                        <div class="contact-details">
+                            <p><strong>Kiambu HQ:</strong><br>Manufacturing Plant & Main Offices</p>
+                            <p><strong>Gikomba Center:</strong><br>Set Hardware Distribution</p>
+                            <p><strong>Kahawa Plant:</strong><br>SetPaints Manufacturing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Form & Map -->
+        <section class="contact-form-map">
+            <div class="container">
+                <div class="form-map-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and our team will respond within 24 hours</p>
+                        
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="sales">Product Sales</option>
+                                    <option value="quote">Quote Request</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="installation">Installation Services</option>
+                                    <option value="wholesale">Wholesale/Bulk Orders</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subsidiary">Subsidiary (Optional)</label>
+                                <select id="subsidiary" name="subsidiary">
+                                    <option value="">All Subsidiaries</option>
+                                    <option value="executive">Executive Curtain Rods</option>
+                                    <option value="setpaints">SetPaints</option>
+                                    <option value="sethardware">Set Hardware</option>
+                                    <option value="sunwatch">SunWatch Solar</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-gold">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="map-container">
+                        <h2>Our Locations</h2>
+                        <div class="map-tabs">
+                            <button class="map-tab active" data-location="kiambu">Kiambu HQ</button>
+                            <button class="map-tab" data-location="gikomba">Gikomba</button>
+                            <button class="map-tab" data-location="kahawa">Kahawa</button>
+                        </div>
+                        
+                        <div class="map-placeholder active" id="kiambu-map">
+                            <div class="map-content">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3>Kiambu Headquarters</h3>
+                                <p>Main manufacturing plant and corporate offices</p>
+                                <div class="map-address">
+                                    <p><i class="fas fa-map-marker-alt"></i> Kiambu Road, Near Kiambu Town</p>
+                                    <p><i class="fas fa-phone"></i> 0723 518 210</p>
+                                    <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-5PM, Sat: 9AM-1PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="map-placeholder" id="gikomba-map">
+                            <div class="map-content">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3>Gikomba Distribution Center</h3>
+                                <p>Set Hardware showroom and customer service hub</p>
+                                <div class="map-address">
+                                    <p><i class="fas fa-map-marker-alt"></i> Gikomba Market, Nairobi</p>
+                                    <p><i class="fas fa-phone"></i> 0727 111 199</p>
+                                    <p><i class="fas fa-clock"></i> Mon-Sat: 7AM-6PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="map-placeholder" id="kahawa-map">
+                            <div class="map-content">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3>Kahawa Manufacturing Plant</h3>
+                                <p>SetPaints production facility and research center</p>
+                                <div class="map-address">
+                                    <p><i class="fas fa-map-marker-alt"></i> Kahawa West, Nairobi</p>
+                                    <p><i class="fas fa-phone"></i> 0727 111 119</p>
+                                    <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-5PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="location-details">
+                            <h3>Business Hours</h3>
+                            <div class="hours-table">
+                                <div class="hour-row">
+                                    <span>Monday - Friday</span>
+                                    <span>8:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="hour-row">
+                                    <span>Saturday</span>
+                                    <span>9:00 AM - 1:00 PM</span>
+                                </div>
+                                <div class="hour-row">
+                                    <span>Sunday & Holidays</span>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Departments -->
+        <section class="departments">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Specific Departments</h2>
+                    <p>Get directly in touch with the right team for your needs</p>
+                </div>
+                
+                <div class="departments-grid">
+                    <div class="department-card">
+                        <h3><i class="fas fa-shopping-cart"></i> Sales Department</h3>
+                        <p>For product inquiries, pricing, and bulk orders</p>
+                        <div class="department-contact">
+                            <p><i class="fas fa-phone"></i> 0727 111 199</p>
+                            <p><i class="fas fa-envelope"></i> sales@seventwentyholdings.co.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card">
+                        <h3><i class="fas fa-headset"></i> Customer Support</h3>
+                        <p>For order tracking, complaints, and general assistance</p>
+                        <div class="department-contact">
+                            <p><i class="fas fa-phone"></i> 0727 111 119</p>
+                            <p><i class="fas fa-envelope"></i> support@seventwentyholdings.co.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card">
+                        <h3><i class="fas fa-tools"></i> Technical & Installation</h3>
+                        <p>For installation services and technical questions</p>
+                        <div class="department-contact">
+                            <p><i class="fas fa-phone"></i> 0723 518 210 (Ext. 3)</p>
+                            <p><i class="fas fa-envelope"></i> installation@seventwentyholdings.co.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card">
+                        <h3><i class="fas fa-truck"></i> Delivery & Logistics</h3>
+                        <p>For delivery scheduling and shipping inquiries</p>
+                        <div class="department-contact">
+                            <p><i class="fas fa-phone"></i> 0723 518 210 (Ext. 2)</p>
+                            <p><i class="fas fa-envelope"></i> delivery@seventwentyholdings.co.ke</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Emergency Contact -->
+        <section class="emergency-contact">
+            <div class="container">
+                <div class="emergency-content">
+                    <div class="emergency-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="emergency-text">
+                        <h3>Urgent Matters</h3>
+                        <p>For urgent delivery issues, quality complaints, or safety concerns, call our emergency line available 24/7:</p>
+                        <div class="emergency-phone">
+                            <i class="fas fa-phone"></i>
+                            <span>0723 518 210 (Press 9 for emergency)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="../js/header-footer-loader.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

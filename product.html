@@ -1,0 +1,426 @@
+<!-- product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | SevenTwenty Holdings</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="product-page">
+        <!-- Breadcrumb -->
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
+                <a href="shop.html">Shop</a> <i class="fas fa-chevron-right"></i>
+                <span id="product-category">Category</span> <i class="fas fa-chevron-right"></i>
+                <span id="product-name">Product</span>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <section class="product-details">
+            <div class="container">
+                <div class="product-wrapper">
+                    <!-- Product Gallery -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="main-product-image" src="" alt="Product Image">
+                            <button class="zoom-btn"><i class="fas fa-search-plus"></i></button>
+                            <div class="product-badge" id="product-badge">Executive</div>
+                        </div>
+                        <div class="thumbnail-gallery">
+                            <div class="thumbnail active"><img src="" alt="Thumbnail 1"></div>
+                            <div class="thumbnail"><img src="" alt="Thumbnail 2"></div>
+                            <div class="thumbnail"><img src="" alt="Thumbnail 3"></div>
+                            <div class="thumbnail"><img src="" alt="Thumbnail 4"></div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h1 id="product-title">Executive Powder-Coated Curtain Rod</h1>
+                        
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="review-count" id="review-count">(48 reviews)</span>
+                                <a href="#reviews" class="review-link">Write a review</a>
+                            </div>
+                            <div class="stock-status in-stock" id="stock-status">
+                                <i class="fas fa-check-circle"></i> In Stock
+                            </div>
+                        </div>
+
+                        <div class="product-price">
+                            <span class="current-price" id="current-price">KES 2,500</span>
+                            <span class="old-price" id="old-price">KES 3,000</span>
+                            <span class="discount-badge" id="discount-badge">Save 17%</span>
+                        </div>
+
+                        <div class="product-description">
+                            <p id="product-short-desc">Durable steel curtain rod with elegant powder-coated finish, designed for a 20+ years lifespan. Perfect for modern Kenyan homes.</p>
+                        </div>
+
+                        <div class="product-features">
+                            <h3>Key Features:</h3>
+                            <ul id="features-list">
+                                <li>Premium powder-coated finish</li>
+                                <li>Corrosion-resistant steel construction</li>
+                                <li>20-year guarantee</li>
+                                <li>Easy installation</li>
+                            </ul>
+                        </div>
+
+                        <!-- Product Options -->
+                        <div class="product-options">
+                            <!-- Color Selection -->
+                            <div class="option-group">
+                                <label>Color:</label>
+                                <div class="color-options">
+                                    <button class="color-option active" style="background-color: #ffffff;" data-color="white">White</button>
+                                    <button class="color-option" style="background-color: #000000;" data-color="black">Black</button>
+                                    <button class="color-option" style="background-color: #d4af37;" data-color="gold">Gold</button>
+                                    <button class="color-option" style="background-color: #c0c0c0;" data-color="silver">Silver</button>
+                                </div>
+                            </div>
+
+                            <!-- Size Selection -->
+                            <div class="option-group">
+                                <label for="size-select">Size/Length:</label>
+                                <select id="size-select">
+                                    <option value="1.5m">1.5 Meters - KES 2,500</option>
+                                    <option value="2m">2 Meters - KES 3,000</option>
+                                    <option value="2.5m">2.5 Meters - KES 3,500</option>
+                                    <option value="3m">3 Meters - KES 4,000</option>
+                                    <option value="custom">Custom Length (Contact for Quote)</option>
+                                </select>
+                            </div>
+
+                            <!-- Quantity -->
+                            <div class="option-group">
+                                <label>Quantity:</label>
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99">
+                                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Installation Service -->
+                            <div class="option-group">
+                                <label class="checkbox-label installation-service">
+                                    <input type="checkbox" id="installation-service">
+                                    <span class="checkmark"></span>
+                                    <span>Add Professional Installation Service <strong>+ KES 1,500</strong></span>
+                                </label>
+                                <p class="installation-note">Our expert team will install your curtain rods within 48 hours of delivery.</p>
+                            </div>
+                        </div>
+
+                        <!-- Product Actions -->
+                        <div class="product-actions">
+                            <button class="btn btn-gold add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-outline buy-now-btn">
+                                <i class="fas fa-bolt"></i> Buy Now
+                            </button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <!-- Product Meta -->
+                        <div class="product-meta-info">
+                            <div class="meta-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Free delivery in Nairobi for orders over KES 10,000</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>20-year warranty on curtain rods</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-undo"></i>
+                                <span>30-day return policy</span>
+                            </div>
+                        </div>
+
+                        <!-- Social Sharing -->
+                        <div class="social-sharing">
+                            <span>Share this product:</span>
+                            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Tabs -->
+        <section class="product-tabs">
+            <div class="container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="installation">Installation</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (48)</button>
+                    <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Description Tab -->
+                    <div class="tab-pane active" id="description">
+                        <h2>Product Description</h2>
+                        <p>Our Executive Powder-Coated Curtain Rods are the pinnacle of durability and style. Manufactured with precision engineering and premium materials, these curtain rods are designed to last for decades.</p>
+                        
+                        <h3>Why Choose Our Curtain Rods?</h3>
+                        <ul>
+                            <li><strong>Premium Quality:</strong> Made from high-grade steel with anti-corrosion treatment</li>
+                            <li><strong>Elegant Finish:</strong> Smooth powder-coated finish that resists scratches and fading</li>
+                            <li><strong>Easy Installation:</strong> Complete kit with all necessary hardware and instructions</li>
+                            <li><strong>Customizable:</strong> Available in various lengths and colors to match your decor</li>
+                            <li><strong>Kenyan Made:</strong> Manufactured in our Nairobi factory with local materials</li>
+                        </ul>
+
+                        <h3>Ideal For</h3>
+                        <p>Residential homes, offices, hotels, schools, and commercial buildings across Kenya.</p>
+                    </div>
+
+                    <!-- Specifications Tab -->
+                    <div class="tab-pane" id="specifications">
+                        <h2>Technical Specifications</h2>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Material</th>
+                                <td>High-grade Steel</td>
+                            </tr>
+                            <tr>
+                                <th>Finish</th>
+                                <td>Powder-Coated</td>
+                            </tr>
+                            <tr>
+                                <th>Diameter</th>
+                                <td>25mm</td>
+                            </tr>
+                            <tr>
+                                <th>Weight Capacity</th>
+                                <td>Up to 15kg</td>
+                            </tr>
+                            <tr>
+                                <th>Warranty</th>
+                                <td>20 Years</td>
+                            </tr>
+                            <tr>
+                                <th>Manufacturing</th>
+                                <td>Made in Kenya</td>
+                            </tr>
+                            <tr>
+                                <th>Certifications</th>
+                                <td>KEBS Certified, ISO 9001:2015</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Installation Tab -->
+                    <div class="tab-pane" id="installation">
+                        <h2>Installation Guide</h2>
+                        <div class="installation-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Measure & Mark</h3>
+                                    <p>Measure the width of your window and mark the installation points on the wall.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Drill Holes</h3>
+                                    <p>Drill holes at the marked points using a 6mm masonry drill bit.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Install Brackets</h3>
+                                    <p>Insert wall plugs and screw the brackets securely into place.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Mount Rod</h3>
+                                    <p>Place the curtain rod onto the brackets and secure with provided screws.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="professional-installation">
+                            <h3><i class="fas fa-tools"></i> Professional Installation Available</h3>
+                            <p>Our experienced technicians can install your curtain rods within 48 hours of delivery. Book installation service above for KES 1,500.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-pane" id="reviews">
+                        <h2>Customer Reviews</h2>
+                        
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <div class="rating-number">4.5</div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 48 reviews</p>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span>5 Stars</span>
+                                    <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 Stars</span>
+                                    <div class="bar"><div class="fill" style="width: 20%;"></div></div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 Stars</span>
+                                    <div class="bar"><div class="fill" style="width: 5%;"></div></div>
+                                    <span>5%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 Stars</span>
+                                    <div class="bar"><div class="fill" style="width: 3%;"></div></div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 Star</span>
+                                    <div class="bar"><div class="fill" style="width: 2%;"></div></div>
+                                    <span>2%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-form">
+                            <h3>Write a Review</h3>
+                            <form id="review-form">
+                                <div class="form-group">
+                                    <label>Your Rating</label>
+                                    <div class="rating-input">
+                                        <i class="far fa-star" data-rating="1"></i>
+                                        <i class="far fa-star" data-rating="2"></i>
+                                        <i class="far fa-star" data-rating="3"></i>
+                                        <i class="far fa-star" data-rating="4"></i>
+                                        <i class="far fa-star" data-rating="5"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Write your review here..." rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-gold">Submit Review</button>
+                            </form>
+                        </div>
+
+                        <div class="review-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <strong>John M.</strong>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                                <p>"Excellent quality! The curtain rods are very sturdy and the installation was straightforward. The gold finish looks luxurious in my living room."</p>
+                            </div>
+
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <strong>Sarah K.</strong>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">1 month ago</span>
+                                </div>
+                                <p>"Good product but delivery took longer than expected. The quality is worth the wait though. I'll order again for other rooms."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Tab -->
+                    <div class="tab-pane" id="shipping">
+                        <h2>Shipping & Returns</h2>
+                        
+                        <div class="shipping-info">
+                            <h3><i class="fas fa-shipping-fast"></i> Delivery Information</h3>
+                            <ul>
+                                <li><strong>Nairobi:</strong> Free delivery for orders over KES 10,000 (1-2 business days)</li>
+                                <li><strong>Major Towns:</strong> KES 500-1,500 (3-5 business days)</li>
+                                <li><strong>Remote Areas:</strong> Contact for quote (5-7 business days)</li>
+                                <li><strong>Installation:</strong> Available within 48 hours of delivery (additional KES 1,500)</li>
+                            </ul>
+                        </div>
+
+                        <div class="returns-info">
+                            <h3><i class="fas fa-undo"></i> Returns Policy</h3>
+                            <p>We offer a 30-day return policy for unused products in original packaging. Installation fees are non-refundable once service has been scheduled.</p>
+                            <p>To initiate a return, contact our customer service at <strong>0700 720 720</strong> or email <strong>returns@seventwentyholdings.co.ke</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="related-products">
+            <div class="container">
+                <h2>Related Products</h2>
+                <div class="products-grid" id="related-products">
+                    <!-- Related products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/header-footer-loader.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

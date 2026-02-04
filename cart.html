@@ -1,0 +1,167 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | SevenTwenty Holdings</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="cart-page">
+        <!-- Hero Section -->
+        <section class="cart-hero">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
+                    <a href="shop.html">Shop</a> <i class="fas fa-chevron-right"></i>
+                    <span>Shopping Cart</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Content -->
+        <section class="cart-content">
+            <div class="container">
+                <div class="cart-wrapper">
+                    <!-- Cart Items -->
+                    <div class="cart-items-section">
+                        <div class="cart-header">
+                            <h2>Your Cart Items</h2>
+                            <button class="btn btn-outline btn-small" id="continue-shopping">
+                                <i class="fas fa-arrow-left"></i> Continue Shopping
+                            </button>
+                        </div>
+
+                        <div class="cart-items" id="cart-items">
+                            <!-- Cart items will be loaded from localStorage -->
+                            <div class="empty-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>Your cart is empty</h3>
+                                <p>Add some products to your cart and they will appear here.</p>
+                                <a href="shop.html" class="btn btn-gold">Start Shopping</a>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Calculator -->
+                        <div class="delivery-calculator">
+                            <h3><i class="fas fa-truck"></i> Delivery Calculator</h3>
+                            <div class="calculator-form">
+                                <div class="form-group">
+                                    <label for="county-select">Select County:</label>
+                                    <select id="county-select">
+                                        <option value="">Select County</option>
+                                        <option value="nairobi">Nairobi</option>
+                                        <option value="kiambu">Kiambu</option>
+                                        <option value="mombasa">Mombasa</option>
+                                        <option value="kisumu">Kisumu</option>
+                                        <option value="nakuru">Nakuru</option>
+                                        <option value="other">Other Counties</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address-input">Delivery Address:</label>
+                                    <input type="text" id="address-input" placeholder="Enter your complete address">
+                                </div>
+                                <button class="btn btn-outline" id="calculate-delivery">Calculate Delivery</button>
+                            </div>
+                            <div class="delivery-result" id="delivery-result">
+                                <!-- Delivery cost will be calculated here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary-section">
+                        <div class="order-summary">
+                            <h2>Order Summary</h2>
+                            
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>Subtotal (3 items)</span>
+                                    <span class="summary-value" id="subtotal">KES 0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery Fee</span>
+                                    <span class="summary-value" id="delivery-fee">KES 0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Installation Services</span>
+                                    <span class="summary-value" id="installation-fee">KES 0</span>
+                                </div>
+                                
+                                <div class="summary-divider"></div>
+                                
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span class="summary-value" id="total">KES 0</span>
+                                </div>
+                            </div>
+
+                            <!-- Promo Code -->
+                            <div class="promo-code">
+                                <h3><i class="fas fa-tag"></i> Promo Code</h3>
+                                <div class="promo-input">
+                                    <input type="text" id="promo-code-input" placeholder="Enter promo code">
+                                    <button class="btn btn-outline" id="apply-promo">Apply</button>
+                                </div>
+                                <div class="promo-suggestions">
+                                    <p>Try: <span class="promo-suggestion" data-code="WELCOME10">WELCOME10</span> for 10% off</p>
+                                </div>
+                            </div>
+
+                            <!-- Checkout Button -->
+                            <a href="checkout.html" class="btn btn-gold checkout-btn" id="proceed-checkout">
+                                <i class="fas fa-lock"></i> Proceed to Checkout
+                            </a>
+
+                            <!-- Payment Methods -->
+                            <div class="payment-methods">
+                                <h3>Secure Payment Methods</h3>
+                                <div class="payment-icons">
+                                    <i class="fab fa-cc-m-pesa" title="M-Pesa"></i>
+                                    <i class="fab fa-cc-visa" title="Visa"></i>
+                                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                                    <i class="fas fa-university" title="Bank Transfer"></i>
+                                    <i class="fas fa-money-bill-wave" title="Cash on Delivery"></i>
+                                </div>
+                                <p class="secure-note">
+                                    <i class="fas fa-shield-alt"></i> Your payment information is secure and encrypted
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Customer Support -->
+                        <div class="customer-support">
+                            <h3><i class="fas fa-headset"></i> Need Help?</h3>
+                            <p>Our customer support team is here to assist you.</p>
+                            <div class="support-contact">
+                                <p><i class="fas fa-phone"></i> <strong>0700 720 720</strong></p>
+                                <p><i class="fas fa-envelope"></i> <strong>support@seventwentyholdings.co.ke</strong></p>
+                            </div>
+                            <p class="business-hours">
+                                <i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM | Sat: 9:00 AM - 1:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/header-footer-loader.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

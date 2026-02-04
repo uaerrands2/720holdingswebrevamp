@@ -1,0 +1,355 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Executive Powder-Coated Curtain Rod",
+      "subsidiary": "executive",
+      "category": "curtain-rods",
+      "subcategory": "rods",
+      "price": 2500,
+      "oldPrice": 3000,
+      "description": "Durable steel curtain rod with elegant powder-coated finish, 20+ years lifespan.",
+      "shortDescription": "Premium powder-coated curtain rod with 20-year guarantee",
+      "features": ["Powder-coated", "Corrosion-resistant", "20-year guarantee", "Easy installation", "Made in Kenya"],
+      "specifications": {
+        "material": "High-grade Steel",
+        "finish": "Powder-Coated",
+        "diameter": "25mm",
+        "weightCapacity": "15kg",
+        "warranty": "20 Years",
+        "certifications": "KEBS Certified, ISO 9001:2015"
+      },
+      "colors": ["white", "black", "gold", "silver"],
+      "sizes": ["1.5m", "2m", "2.5m", "3m", "custom"],
+      "rating": 4.5,
+      "reviewCount": 48,
+      "stock": 150,
+      "bulkDiscount": "Buy 3+ save 10%",
+      "images": [
+        "https://picsum.photos/seed/product-1-a/800/600",
+        "https://picsum.photos/seed/product-1-b/800/600",
+        "https://picsum.photos/seed/product-1-c/800/600"
+      ],
+      "tags": ["bestseller", "premium", "durable", "kenyan-made"]
+    },
+    {
+      "id": 2,
+      "name": "SetPaints Premium Interior Paint - 4L",
+      "subsidiary": "setpaints",
+      "category": "paints",
+      "subcategory": "interior",
+      "price": 3200,
+      "oldPrice": 3500,
+      "description": "Premium quality interior paint with low VOC, excellent coverage and washable finish.",
+      "shortDescription": "Washable interior paint with low odor and excellent coverage",
+      "features": ["Low VOC", "Washable", "Mildew-resistant", "Quick drying", "Easy application"],
+      "specifications": {
+        "type": "Water-based Acrylic",
+        "coverage": "12-14 sqm/L",
+        "dryingTime": "1-2 hours",
+        "recoatTime": "4 hours",
+        "volume": "4 Liters",
+        "sheen": "Matte Finish"
+      },
+      "colors": ["white", "cream", "beige", "light-grey", "sky-blue"],
+      "sizes": ["1L", "4L", "20L"],
+      "rating": 4.3,
+      "reviewCount": 92,
+      "stock": 85,
+      "bulkDiscount": "Buy 5+ save 15%",
+      "images": [
+        "https://picsum.photos/seed/product-2-a/800/600",
+        "https://picsum.photos/seed/product-2-b/800/600"
+      ],
+      "tags": ["eco-friendly", "low-odor", "washable", "premium"]
+    },
+    {
+      "id": 3,
+      "name": "Set Hardware Premium Door Handle Set",
+      "subsidiary": "sethardware",
+      "category": "hardware",
+      "subcategory": "door-hardware",
+      "price": 1800,
+      "oldPrice": 2200,
+      "description": "Heavy-duty door handle set with anti-corrosion finish and smooth operation.",
+      "shortDescription": "Durable door handle set with anti-corrosion finish",
+      "features": ["Anti-corrosion", "Heavy-duty", "Smooth operation", "Easy installation", "5-year warranty"],
+      "specifications": {
+        "material": "Brass with Steel Core",
+        "finish": "Satin Chrome",
+        "latchSize": "65mm",
+        "backset": "60mm",
+        "warranty": "5 Years"
+      },
+      "colors": ["chrome", "brass", "black", "bronze"],
+      "sizes": ["standard"],
+      "rating": 4.7,
+      "reviewCount": 63,
+      "stock": 200,
+      "bulkDiscount": "Buy 6+ save 20%",
+      "images": [
+        "https://picsum.photos/seed/product-3-a/800/600",
+        "https://picsum.photos/seed/product-3-b/800/600"
+      ],
+      "tags": ["bestseller", "heavy-duty", "corrosion-resistant"]
+    },
+    {
+      "id": 4,
+      "name": "SunWatch Solar Street Light 50W",
+      "subsidiary": "sunwatch",
+      "category": "solar",
+      "subcategory": "street-lights",
+      "price": 12500,
+      "oldPrice": 15000,
+      "description": "Solar-powered street light with motion sensor, 2-day battery backup and IP65 waterproof rating.",
+      "shortDescription": "50W solar street light with motion sensor and IP65 rating",
+      "features": ["Motion Sensor", "2-day Backup", "IP65 Waterproof", "Auto Dusk-to-Dawn", "Easy Installation"],
+      "specifications": {
+        "power": "50W",
+        "battery": "Lithium 12.8V/20Ah",
+        "backupTime": "48 hours",
+        "waterproof": "IP65",
+        "solarPanel": "Monocrystalline 80W",
+        "lightSensor": "Auto On/Off"
+      },
+      "colors": ["black", "silver"],
+      "sizes": ["50W", "100W"],
+      "rating": 4.8,
+      "reviewCount": 41,
+      "stock": 45,
+      "bulkDiscount": "Buy 2+ save 12%",
+      "images": [
+        "https://picsum.photos/seed/product-4-a/800/600",
+        "https://picsum.photos/seed/product-4-b/800/600"
+      ],
+      "tags": ["energy-saving", "weatherproof", "motion-sensor", "long-lasting"]
+    },
+    {
+      "id": 5,
+      "name": "Executive Double Curtain Rod Set",
+      "subsidiary": "executive",
+      "category": "curtain-rods",
+      "subcategory": "double-rods",
+      "price": 4500,
+      "oldPrice": 5200,
+      "description": "Double curtain rod system for layered curtain look, perfect for sheers and blackout curtains.",
+      "shortDescription": "Double rod system for layered curtain styling",
+      "features": ["Double Rod System", "Adjustable Brackets", "Heavy-duty", "Modern Design", "Complete Kit"],
+      "specifications": {
+        "material": "Steel with Powder Coat",
+        "rodType": "Double",
+        "adjustable": "Yes",
+        "maxWeight": "12kg per rod",
+        "finish": "Matte Black"
+      },
+      "colors": ["black", "white", "chrome"],
+      "sizes": ["1.8m", "2.4m", "3m"],
+      "rating": 4.6,
+      "reviewCount": 28,
+      "stock": 75,
+      "bulkDiscount": null,
+      "images": [
+        "https://picsum.photos/seed/product-5-a/800/600",
+        "https://picsum.photos/seed/product-5-b/800/600"
+      ],
+      "tags": ["double-rod", "modern", "adjustable"]
+    },
+    {
+      "id": 6,
+      "name": "SetPaints WeatherShield Exterior Paint - 20L",
+      "subsidiary": "setpaints",
+      "category": "paints",
+      "subcategory": "exterior",
+      "price": 12500,
+      "oldPrice": 14000,
+      "description": "Ultra-durable exterior paint with UV protection, water resistance and algae resistance.",
+      "shortDescription": "Weather-resistant exterior paint with 10-year guarantee",
+      "features": ["UV Protection", "Water Resistant", "Algae Resistant", "10-year Guarantee", "Fade Resistant"],
+      "specifications": {
+        "type": "Acrylic Elastomeric",
+        "coverage": "8-10 sqm/L",
+        "dryingTime": "6-8 hours",
+        "recoatTime": "24 hours",
+        "volume": "20 Liters",
+        "guarantee": "10 Years"
+      },
+      "colors": ["white", "cream", "grey", "terracotta", "navy-blue"],
+      "sizes": ["4L", "10L", "20L"],
+      "rating": 4.4,
+      "reviewCount": 56,
+      "stock": 40,
+      "bulkDiscount": "Buy 2+ save 10%",
+      "images": [
+        "https://picsum.photos/seed/product-6-a/800/600",
+        "https://picsum.photos/seed/product-6-b/800/600"
+      ],
+      "tags": ["weatherproof", "long-lasting", "uv-protection"]
+    },
+    {
+      "id": 7,
+      "name": "Set Hardware Security Door Lock",
+      "subsidiary": "sethardware",
+      "category": "hardware",
+      "subcategory": "locks",
+      "price": 3500,
+      "oldPrice": 4000,
+      "description": "High-security door lock with anti-drill plates and 5-pin tumbler mechanism.",
+      "shortDescription": "Anti-drill security lock with 5-pin tumbler",
+      "features": ["Anti-drill Plates", "5-pin Tumbler", "Reinforced Bolt", "Keyed Alike Option", "10-year Warranty"],
+      "specifications": {
+        "material": "Solid Brass",
+        "boltSize": "25mm",
+        "securityFeatures": "Anti-drill, Anti-pick",
+        "keysIncluded": "3",
+        "warranty": "10 Years"
+      },
+      "colors": ["brass", "nickel", "black"],
+      "sizes": ["60mm", "70mm"],
+      "rating": 4.9,
+      "reviewCount": 87,
+      "stock": 120,
+      "bulkDiscount": "Buy 4+ save 15%",
+      "images": [
+        "https://picsum.photos/seed/product-7-a/800/600",
+        "https://picsum.photos/seed/product-7-b/800/600"
+      ],
+      "tags": ["security", "anti-drill", "high-security"]
+    },
+    {
+      "id": 8,
+      "name": "SunWatch Solar Home Kit 100W",
+      "subsidiary": "sunwatch",
+      "category": "solar",
+      "subcategory": "home-kits",
+      "price": 28500,
+      "oldPrice": 32000,
+      "description": "Complete solar home system with 100W panel, battery, inverter and LED lights.",
+      "shortDescription": "Complete 100W solar home lighting system",
+      "features": ["Complete Kit", "3 LED Lights", "Mobile Charging", "Radio Power", "Easy Setup"],
+      "specifications": {
+        "panelPower": "100W Monocrystalline",
+        "battery": "Gel 12V/20Ah",
+        "inverter": "300W Pure Sine Wave",
+        "lightsIncluded": "3 LED Bulbs",
+        "backupTime": "8-12 hours"
+      },
+      "colors": ["black", "blue"],
+      "sizes": ["100W", "200W", "300W"],
+      "rating": 4.7,
+      "reviewCount": 62,
+      "stock": 25,
+      "bulkDiscount": "Free installation with purchase",
+      "images": [
+        "https://picsum.photos/seed/product-8-a/800/600",
+        "https://picsum.photos/seed/product-8-b/800/600"
+      ],
+      "tags": ["complete-kit", "home-system", "backup-power"]
+    },
+    {
+      "id": 9,
+      "name": "Executive Curtain Rings - Pack of 20",
+      "subsidiary": "executive",
+      "category": "curtain-rods",
+      "subcategory": "accessories",
+      "price": 800,
+      "oldPrice": 1000,
+      "description": "Smooth-gliding curtain rings with silent operation and durable construction.",
+      "shortDescription": "Silent-glide curtain rings, pack of 20",
+      "features": ["Silent Operation", "Smooth Glide", "Durable", "Universal Fit", "Corrosion-resistant"],
+      "specifications": {
+        "material": "Nylon with Steel Insert",
+        "quantity": "20 per pack",
+        "ringSize": "45mm",
+        "maxWeight": "1kg per ring",
+        "compatibility": "All Executive rods"
+      },
+      "colors": ["white", "black", "chrome"],
+      "sizes": ["standard"],
+      "rating": 4.2,
+      "reviewCount": 34,
+      "stock": 300,
+      "bulkDiscount": "Buy 3+ packs save 20%",
+      "images": [
+        "https://picsum.photos/seed/product-9-a/800/600"
+      ],
+      "tags": ["accessory", "silent", "smooth-glide"]
+    },
+    {
+      "id": 10,
+      "name": "SetPaints Wood Primer - 1L",
+      "subsidiary": "setpaints",
+      "category": "paints",
+      "subcategory": "primers",
+      "price": 950,
+      "oldPrice": 1200,
+      "description": "High-adhesion wood primer for interior and exterior wood surfaces.",
+      "shortDescription": "High-adhesion primer for wood surfaces",
+      "features": ["High Adhesion", "Stain Blocking", "Quick Drying", "Low Odor", "For Interior/Exterior"],
+      "specifications": {
+        "type": "Acrylic Primer",
+        "coverage": "10-12 sqm/L",
+        "dryingTime": "1 hour",
+        "recoatTime": "2 hours",
+        "volume": "1 Liter"
+      },
+      "colors": ["white"],
+      "sizes": ["1L", "4L"],
+      "rating": 4.5,
+      "reviewCount": 47,
+      "stock": 180,
+      "bulkDiscount": null,
+      "images": [
+        "https://picsum.photos/seed/product-10-a/800/600"
+      ],
+      "tags": ["primer", "wood", "stain-blocking"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "curtain-rods",
+      "name": "Curtain Rods",
+      "subsidiary": "executive",
+      "subcategories": ["rods", "double-rods", "accessories", "brackets"]
+    },
+    {
+      "id": "paints",
+      "name": "Paints",
+      "subsidiary": "setpaints",
+      "subcategories": ["interior", "exterior", "primers", "specialty", "tools"]
+    },
+    {
+      "id": "hardware",
+      "name": "Hardware",
+      "subsidiary": "sethardware",
+      "subcategories": ["door-hardware", "window-hardware", "locks", "hinges", "building-materials"]
+    },
+    {
+      "id": "solar",
+      "name": "Solar Solutions",
+      "subsidiary": "sunwatch",
+      "subcategories": ["street-lights", "home-kits", "solar-panels", "batteries", "lights"]
+    }
+  ],
+  "subsidiaries": {
+    "executive": {
+      "name": "Executive Curtain Rods",
+      "color": "#0d47a1",
+      "description": "Premium curtain rods & accessories"
+    },
+    "setpaints": {
+      "name": "SetPaints",
+      "color": "#c62828",
+      "description": "Interior/exterior paints & painting supplies"
+    },
+    "sethardware": {
+      "name": "Set Hardware",
+      "color": "#2e7d32",
+      "description": "Door/window hardware & building materials"
+    },
+    "sunwatch": {
+      "name": "SunWatch Solar",
+      "color": "#ff9800",
+      "description": "Solar lighting solutions"
+    }
+  }
+}

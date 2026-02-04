@@ -1,0 +1,425 @@
+<header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> 0723 518 210</span>
+                    <span><i class="fas fa-envelope"></i> info@executivecurtainrods.co.ke</span>
+                </div>
+                <div class="header-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Executive Curtain Rods</h1>
+                        <p class="tagline">A Kenyan Manufacturer</p>
+                    </a>
+                </div>
+                
+                <div class="header-search-cart">
+                    <div class="search-container">
+                        <form class="search-form">
+                            <input type="text" placeholder="Search products..." class="search-input">
+                            <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <div class="cart-container">
+                        <a href="cart.html" class="cart-icon" id="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-page="home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="shop.html" data-page="shop">Shop <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h3>All Products</h3>
+                                    <a href="shop.html">All Products</a>
+                                    
+                                    <h3>Categories</h3>
+                                    <a href="shop.html?category=curtain-rods">Curtain Rods & Accessories</a>
+                                    <a href="shop.html?category=paints">Paints</a>
+                                    <a href="shop.html?category=hardware">Hardware</a>
+                                    <a href="shop.html?category=solar-lighting">Solar Lighting</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Our Subsidiaries</h3>
+                                    <a href="/executive">Executive Curtain Rods</a>
+                                    <a href="/setpaints">SetPaints</a>
+                                    <a href="/set-hardware">Set Hardware</a>
+                                    <a href="/sunwatch">SunWatch Solar</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Popular Products</h3>
+                                    <a href="product.html">Powder-Coated Curtain Rods</a>
+                                    <a href="product.html">Premium Interior Paint</a>
+                                    <a href="product.html">Solar Flood Lights</a>
+                                    <a href="product.html">Window & Door Accessories</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="pages/about.html" data-page="about">About Us</a></li>
+                    <li><a href="pages/how-to-order.html" data-page="how-to-order">How to Order</a></li>
+                    <li><a href="pages/contact.html" data-page="contact">Contact Us</a></li>
+                    <li><a href="pages/get-quote.html" data-page="get-quote" class="btn btn-gold">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <style>
+        /* Header-specific styles */
+        .main-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 0;
+            display: none;
+        }
+        
+        .header-contact {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .header-contact i {
+            margin-right: 5px;
+        }
+        
+        .header-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .header-social a {
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .header-social a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 0;
+        }
+        
+        .logo .tagline {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            margin-top: -5px;
+        }
+        
+        .logo a {
+            text-decoration: none;
+        }
+        
+        .header-search-cart {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .search-form {
+            display: flex;
+            width: 250px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-right: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .search-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+        }
+        
+        .cart-icon {
+            position: relative;
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-gold);
+            color: var(--dark-text);
+            font-size: 0.7rem;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 5px;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .main-nav {
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+            padding: 0;
+            display: none;
+        }
+        
+        .main-nav.active {
+            display: block;
+        }
+        
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 0;
+            padding: 10px 0;
+        }
+        
+        .nav-list li {
+            position: relative;
+        }
+        
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: var(--transition);
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .nav-list li a:hover {
+            background-color: #f9fafb;
+            color: var(--primary-blue);
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: static;
+            background-color: var(--white);
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .dropdown-column h3 {
+            font-size: 1rem;
+            margin: 15px 0 10px 0;
+            color: var(--primary-blue);
+        }
+        
+        .dropdown-column a {
+            display: block;
+            padding: 5px 0;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+        }
+        
+        .dropdown-column a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Desktop styles */
+        @media (min-width: 992px) {
+            .header-top {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .header-main {
+                padding: 20px 0;
+            }
+            
+            .logo h1 {
+                font-size: 2.2rem;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            .main-nav {
+                display: block !important;
+                border-top: none;
+                padding: 10px 0;
+            }
+            
+            .main-nav.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: row;
+                align-items: center;
+                gap: 25px;
+            }
+            
+            .nav-list li a {
+                padding: 5px 0;
+                border-bottom: none;
+            }
+            
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 800px;
+                box-shadow: var(--shadow);
+                border-radius: var(--radius);
+                padding: 25px;
+                display: none;
+                z-index: 1000;
+                border-top: 3px solid var(--accent-gold);
+            }
+            
+            .dropdown-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .nav-list li:last-child a {
+                padding: 10px 20px;
+                margin-left: 10px;
+            }
+        }
+    </style>
+    
+    <script>
+        // Header-specific scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when a link is clicked
+            const navLinks = mainNav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                });
+            });
+            
+            // Close mobile menu when window is resized to desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 992) {
+                    mainNav.classList.remove('active');
+                }
+            });
+            
+            // Update cart count (prefer global updater if available)
+            function refreshHeaderCartCount() {
+                const cartCounts = document.querySelectorAll('.cart-count');
+                if (typeof window.updateCartCount === 'function') {
+                    window.updateCartCount();
+                } else {
+                    const cart = JSON.parse(localStorage.getItem('sevenTwentyCart')) || [];
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    cartCounts.forEach(el => {
+                        el.textContent = totalItems;
+                        el.style.display = totalItems > 0 ? 'flex' : 'none';
+                    });
+                }
+            }
+
+            refreshHeaderCartCount();
+            
+            // Cart icon click handler
+            const cartIcon = document.getElementById('cart-icon');
+            if (cartIcon) {
+                cartIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Shopping cart functionality will be implemented with WooCommerce integration.');
+                    // In a full implementation, this would open a cart modal or navigate to cart page
+                });
+            }
+            
+            // Search form submission
+            const searchForm = document.querySelector('.search-form');
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const searchInput = this.querySelector('.search-input');
+                    if (searchInput.value.trim()) {
+                        window.location.href = `shop.html?search=${encodeURIComponent(searchInput.value)}`;
+                    }
+                });
+            }
+        });
+    </script>
+</header>

@@ -1,0 +1,470 @@
+<!-- checkout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | SevenTwenty Holdings</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="checkout-page">
+        <!-- Progress Bar -->
+        <section class="checkout-progress">
+            <div class="container">
+                <div class="progress-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Contact</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Address</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Delivery</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Content -->
+        <section class="checkout-content">
+            <div class="container">
+                <div class="checkout-wrapper">
+                    <!-- Checkout Form -->
+                    <div class="checkout-form-section">
+                        <form id="checkout-form">
+                            <!-- Step 1: Contact Information -->
+                            <div class="checkout-step active" id="step-1">
+                                <h2><i class="fas fa-user"></i> Contact Information</h2>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name *</label>
+                                        <input type="text" id="first-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name *</label>
+                                        <input type="text" id="last-name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" placeholder="07XX XXX XXX" required>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline" id="cancel-checkout">Cancel</button>
+                                    <button type="button" class="btn btn-gold next-step" data-next="2">Continue to Address</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Delivery Address -->
+                            <div class="checkout-step" id="step-2">
+                                <h2><i class="fas fa-map-marker-alt"></i> Delivery Address</h2>
+                                
+                                <div class="form-group">
+                                    <label for="county">County *</label>
+                                    <select id="county" required>
+                                        <option value="">Select County</option>
+                                        <option value="nairobi">Nairobi</option>
+                                        <option value="kiambu">Kiambu</option>
+                                        <option value="mombasa">Mombasa</option>
+                                        <option value="kisumu">Kisumu</option>
+                                        <option value="nakuru">Nakuru</option>
+                                        <option value="eldoret">Eldoret</option>
+                                        <option value="thika">Thika</option>
+                                        <option value="other">Other County</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="town">Town/Area *</label>
+                                    <input type="text" id="town" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="address">Street Address *</label>
+                                    <textarea id="address" rows="3" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="landmark">Nearest Landmark</label>
+                                    <input type="text" id="landmark" placeholder="e.g., Near shopping center, next to bank">
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="building">Building/Apartment</label>
+                                        <input type="text" id="building">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="floor">Floor/Room</label>
+                                        <input type="text" id="floor">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline prev-step" data-prev="1">Back</button>
+                                    <button type="button" class="btn btn-gold next-step" data-next="3">Continue to Delivery</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Delivery Method -->
+                            <div class="checkout-step" id="step-3">
+                                <h2><i class="fas fa-truck"></i> Delivery Method</h2>
+                                
+                                <div class="delivery-options">
+                                    <label class="delivery-option">
+                                        <input type="radio" name="delivery" value="standard" checked>
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <h3>Standard Delivery</h3>
+                                                <span class="delivery-price" id="standard-price">KES 0</span>
+                                            </div>
+                                            <p>3-5 business days</p>
+                                            <ul class="delivery-features">
+                                                <li><i class="fas fa-check"></i> Free for orders over KES 10,000 in Nairobi</li>
+                                                <li><i class="fas fa-check"></i> Trackable delivery</li>
+                                                <li><i class="fas fa-check"></i> Delivery updates via SMS</li>
+                                            </ul>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="delivery-option">
+                                        <input type="radio" name="delivery" value="express">
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <h3>Express Delivery</h3>
+                                                <span class="delivery-price">KES 1,500</span>
+                                            </div>
+                                            <p>1-2 business days</p>
+                                            <ul class="delivery-features">
+                                                <li><i class="fas fa-check"></i> Priority handling</li>
+                                                <li><i class="fas fa-check"></i> Same-day dispatch if ordered before 2PM</li>
+                                                <li><i class="fas fa-check"></i> Phone confirmation before delivery</li>
+                                            </ul>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="delivery-option">
+                                        <input type="radio" name="delivery" value="pickup">
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <h3>Store Pickup</h3>
+                                                <span class="delivery-price">FREE</span>
+                                            </div>
+                                            <p>Pickup from our Nairobi warehouse</p>
+                                            <ul class="delivery-features">
+                                                <li><i class="fas fa-check"></i> Ready in 24 hours</li>
+                                                <li><i class="fas fa-check"></i> No delivery charges</li>
+                                                <li><i class="fas fa-check"></i> Professional advice available</li>
+                                            </ul>
+                                            <p class="pickup-address">
+                                                <i class="fas fa-map-pin"></i> 
+                                                SevenTwenty Holdings, Industrial Area, Nairobi
+                                            </p>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="installation-option">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="schedule-installation">
+                                        <span class="checkmark"></span>
+                                        <span>Schedule Professional Installation</span>
+                                    </label>
+                                    <p class="installation-note">Our technicians will contact you to schedule installation within 48 hours of delivery. Additional charges apply based on product type.</p>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline prev-step" data-prev="2">Back</button>
+                                    <button type="button" class="btn btn-gold next-step" data-next="4">Continue to Payment</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Payment Method -->
+                            <div class="checkout-step" id="step-4">
+                                <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                                
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="mpesa" checked>
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <i class="fab fa-cc-m-pesa"></i>
+                                                <h3>M-Pesa</h3>
+                                            </div>
+                                            <p>Pay instantly via M-Pesa</p>
+                                            <div class="mpesa-instructions">
+                                                <p><strong>Paybill: 247247</strong></p>
+                                                <p><strong>Account: Your Order Number</strong></p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="card">
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <i class="fas fa-credit-card"></i>
+                                                <h3>Credit/Debit Card</h3>
+                                            </div>
+                                            <p>Pay securely with your card</p>
+                                            <div class="card-icons">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="bank">
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <i class="fas fa-university"></i>
+                                                <h3>Bank Transfer</h3>
+                                            </div>
+                                            <p>Transfer to our bank account</p>
+                                            <div class="bank-details">
+                                                <p><strong>Bank:</strong> Equity Bank</p>
+                                                <p><strong>Account:</strong> 1234567890</p>
+                                                <p><strong>Name:</strong> SevenTwenty Holdings Ltd</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="cod">
+                                        <div class="option-content">
+                                            <div class="option-header">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <h3>Cash on Delivery</h3>
+                                            </div>
+                                            <p>Pay when you receive your order</p>
+                                            <p class="cod-note">Available for orders up to KES 50,000. Requires 20% deposit.</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <!-- Card Payment Form (hidden by default) -->
+                                <div class="card-payment-form" id="card-payment-form">
+                                    <h3>Card Details</h3>
+                                    <div class="form-group">
+                                        <label for="card-number">Card Number</label>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry-date">Expiry Date</label>
+                                            <input type="text" id="expiry-date" placeholder="MM/YY">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" placeholder="123">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="card-name">Name on Card</label>
+                                        <input type="text" id="card-name">
+                                    </div>
+                                    
+                                    <div class="secure-payment">
+                                        <i class="fas fa-lock"></i>
+                                        <span>Your payment is secure and encrypted</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-outline prev-step" data-prev="3">Back</button>
+                                    <button type="button" class="btn btn-gold next-step" data-next="5">Review Order</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Order Review -->
+                            <div class="checkout-step" id="step-5">
+                                <h2><i class="fas fa-clipboard-check"></i> Order Review</h2>
+                                
+                                <div class="order-review">
+                                    <div class="review-section">
+                                        <h3>Contact Information</h3>
+                                        <p id="review-contact"></p>
+                                        <button class="edit-btn" data-step="1">Edit</button>
+                                    </div>
+                                    
+                                    <div class="review-section">
+                                        <h3>Delivery Address</h3>
+                                        <p id="review-address"></p>
+                                        <button class="edit-btn" data-step="2">Edit</button>
+                                    </div>
+                                    
+                                    <div class="review-section">
+                                        <h3>Delivery Method</h3>
+                                        <p id="review-delivery"></p>
+                                        <button class="edit-btn" data-step="3">Edit</button>
+                                    </div>
+                                    
+                                    <div class="review-section">
+                                        <h3>Payment Method</h3>
+                                        <p id="review-payment"></p>
+                                        <button class="edit-btn" data-step="4">Edit</button>
+                                    </div>
+                                    
+                                    <div class="review-section">
+                                        <h3>Order Items</h3>
+                                        <div class="review-items" id="review-items">
+                                            <!-- Order items will be loaded here -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="terms-agreement">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="terms-agree" required>
+                                            <span class="checkmark"></span>
+                                            <span>I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-outline prev-step" data-prev="4">Back</button>
+                                        <button type="submit" class="btn btn-gold" id="place-order">Place Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="checkout-summary-section">
+                        <div class="order-summary">
+                            <h2>Order Summary</h2>
+                            
+                            <div class="summary-items" id="summary-items">
+                                <!-- Items will be loaded from cart -->
+                            </div>
+                            
+                            <div class="summary-totals">
+                                <div class="summary-row">
+                                    <span>Subtotal</span>
+                                    <span id="summary-subtotal">KES 0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Delivery</span>
+                                    <span id="summary-delivery">KES 0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Installation</span>
+                                    <span id="summary-installation">KES 0</span>
+                                </div>
+                                
+                                <div class="summary-divider"></div>
+                                
+                                <div class="summary-row total">
+                                    <span>Total</span>
+                                    <span id="summary-total">KES 0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="promo-code">
+                                <h3><i class="fas fa-tag"></i> Apply Promo Code</h3>
+                                <div class="promo-input">
+                                    <input type="text" id="checkout-promo" placeholder="Enter code">
+                                    <button type="button" class="btn btn-outline" id="apply-checkout-promo">Apply</button>
+                                </div>
+                                <div id="promo-message"></div>
+                            </div>
+                            
+                            <div class="customer-support-checkout">
+                                <h3><i class="fas fa-headset"></i> Need Help?</h3>
+                                <p>Call us: <strong>0700 720 720</strong></p>
+                                <p>Email: <strong>orders@seventwentyholdings.co.ke</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-container"></div>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="order-success-modal">
+        <div class="modal-content">
+            <div class="order-success">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p class="order-number">Order #: <strong id="order-number">720-2024-00123</strong></p>
+                <p>Thank you for your order. We've sent a confirmation email with your order details.</p>
+                
+                <div class="order-details">
+                    <h3>Order Details</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Delivery Date:</span>
+                            <span class="detail-value" id="delivery-date">3-5 business days</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Payment Method:</span>
+                            <span class="detail-value" id="payment-method">M-Pesa</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Total Amount:</span>
+                            <span class="detail-value" id="order-total">KES 0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-instructions" id="mpesa-instructions">
+                    <h3><i class="fab fa-cc-m-pesa"></i> M-Pesa Payment Instructions</h3>
+                    <ol>
+                        <li>Go to <strong>Lipa Na M-Pesa</strong></li>
+                        <li>Select <strong>Paybill</strong></li>
+                        <li>Enter Business Number: <strong>247247</strong></li>
+                        <li>Enter Account Number: <strong id="mpesa-account">720-2024-00123</strong></li>
+                        <li>Enter Amount: <strong id="mpesa-amount">KES 0</strong></li>
+                        <li>Enter your M-Pesa PIN and confirm</li>
+                    </ol>
+                </div>
+                
+                <div class="order-actions">
+                    <a href="order-confirmation.html" class="btn btn-gold">View Order Details</a>
+                    <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/header-footer-loader.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

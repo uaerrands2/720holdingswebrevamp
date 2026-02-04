@@ -1,0 +1,433 @@
+/* Contact Page Styles */
+.page-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(135deg, #112919 0%, #52992f 50%, #c5b72a 100%);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(197, 183, 42, 0.1), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.page-header-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, #f8faf7 0%, #f0f5f0 100%);
+    padding: 30px;
+    border-radius: var(--radius);
+    text-align: center;
+    border-left: 4px solid #52992f;
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(17, 41, 25, 0.12);
+    border-left-color: #c5b72a;
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #f0f5f0 0%, #f8faf7 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 2px solid #52992f;
+}
+
+.contact-icon i {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #112919 0%, #52992f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #112919;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    color: var(--light-text);
+}
+
+.contact-details strong {
+    color: var(--dark-text);
+}
+
+.contact-hours {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.contact-form-map {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #f8faf7 0%, #f0f5f0 100%);
+}
+
+.form-map-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-form-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(17, 41, 25, 0.08);
+    border-top: 3px solid #52992f;
+}
+
+.contact-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #112919 0%, #52992f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-form-container p {
+    color: var(--light-text);
+    margin-bottom: 30px;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(10, 36, 99, 0.1);
+}
+
+.map-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.map-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+.map-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.map-tab {
+    padding: 10px 20px;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 1;
+    text-align: center;
+}
+
+.map-tab:hover {
+    background-color: #e5e7eb;
+}
+
+.map-tab.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.map-placeholder {
+    height: 300px;
+    background-color: var(--accent-light);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.map-placeholder.active {
+    display: flex;
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.map-placeholder h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.map-address {
+    margin-top: 20px;
+}
+
+.map-address p {
+    margin-bottom: 5px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.map-address i {
+    font-size: 1rem;
+    color: var(--accent-gold);
+}
+
+.location-details {
+    margin-top: 30px;
+}
+
+.location-details h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.hours-table {
+    background-color: #f8fafc;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.hour-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.hour-row:last-child {
+    border-bottom: none;
+}
+
+.departments {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.department-card {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid #e5e7eb;
+    transition: var(--transition);
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.department-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.department-card h3 i {
+    color: var(--accent-gold);
+}
+
+.department-card p {
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.department-contact p {
+    margin-bottom: 5px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.department-contact i {
+    color: var(--primary-blue);
+    width: 16px;
+}
+
+.emergency-contact {
+    padding: 60px 0;
+    background-color: #fef3c7;
+}
+
+.emergency-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.emergency-icon i {
+    font-size: 3rem;
+    color: var(--warning);
+}
+
+.emergency-text h3 {
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.emergency-text p {
+    color: var(--light-text);
+    margin-bottom: 15px;
+    max-width: 600px;
+}
+
+.emergency-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.emergency-phone i {
+    color: var(--danger);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .form-map-grid {
+        flex-direction: row;
+    }
+    
+    .contact-form-container, .map-container {
+        flex: 1;
+    }
+    
+    .departments-grid {
+        grid-template-columns: repeat(2, 2fr);
+    }
+    
+    .emergency-content {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .contact-form .form-row {
+        flex-direction: row;
+    }
+    
+    .form-group {
+        flex: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .departments-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .map-tabs {
+        flex-wrap: nowrap;
+    }
+}
